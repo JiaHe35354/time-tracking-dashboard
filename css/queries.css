@@ -1,3 +1,9 @@
+@media (max-width: 75em) {
+  .dashboard {
+    margin: 0 3.2rem;
+  }
+}
+
 @media (max-width: 62.5em) {
   .dashboard {
     max-width: 61.2rem;

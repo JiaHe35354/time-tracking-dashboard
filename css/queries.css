@@ -1,0 +1,79 @@
+@media (max-width: 62.5em) {
+  .dashboard {
+    max-width: 61.2rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+  }
+
+  .user {
+    grid-column: 1 / -1;
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+  }
+
+  .img-avatar {
+    width: 6.4rem;
+    height: auto;
+    margin-bottom: 0;
+  }
+
+  .user-name {
+    font-size: 2.4rem;
+  }
+
+  .btn-group {
+    flex-direction: row;
+    justify-content: center;
+    gap: 9rem;
+    padding: 3.9rem 0 2.4rem;
+  }
+
+  .icon-bg {
+    max-height: 4.5rem;
+  }
+
+  .icon {
+    width: 5.7rem;
+    height: auto;
+  }
+
+  .board-info {
+    padding: 2.4rem;
+  }
+
+  .board-header {
+    margin-bottom: 1.6rem;
+  }
+}
+
+@media (max-width: 40em) {
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    max-width: 33rem;
+    margin: 5rem auto;
+  }
+
+  .btn-group {
+    gap: 4rem;
+  }
+
+  .board-header {
+    margin-bottom: 0.8rem;
+  }
+
+  .hour-descrip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .current-hours {
+    font-size: 3.2rem;
+    margin-bottom: 0;
+  }
+}

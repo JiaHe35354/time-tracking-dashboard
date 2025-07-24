@@ -1,0 +1,218 @@
+:root {
+  --color-purple-medium: hsl(246, 80%, 60%);
+
+  --color-orange: hsl(15, 100%, 70%);
+  --color-blue: hsl(195, 74%, 62%);
+  --color-pink: hsl(348, 100%, 68%);
+  --color-green: hsl(145, 58%, 55%);
+  --color-purple-dark: hsl(264, 64%, 52%);
+  --color-yellow: hsl(43, 84%, 65%);
+
+  --color-navy-dark: hsl(226, 43%, 10%);
+  --color-navy-medium: hsl(235, 46%, 20%);
+  --color-purple-light: hsl(235, 45%, 61%);
+  --color-navy-light: hsl(236, 100%, 87%);
+}
+
+/* GENERAL SETTING */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.6rem;
+  min-height: 100vh;
+  background-color: var(--color-navy-dark);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LAYOUT */
+.dashboard {
+  max-width: 111.6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+/* USER BOARD */
+.user {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info {
+  padding: 3.2rem;
+  background-color: var(--color-purple-medium);
+  border-radius: 15px;
+  position: relative;
+  z-index: 10;
+
+  flex: 1;
+}
+
+.img-avatar {
+  width: 7.8rem;
+  height: auto;
+  margin-bottom: 4rem;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+
+.report-text {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-navy-light);
+}
+
+.user-name {
+  display: block;
+  font-size: 4rem;
+  font-weight: 300;
+}
+
+.btn-group {
+  background-color: var(--color-navy-medium);
+  padding: 4.8rem 3.2rem 3.2rem;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin-top: -15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--color-purple-light);
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.btn-active {
+  color: #fff;
+}
+
+/* ACTIVITY BOARD */
+.board {
+  overflow: hidden;
+}
+
+.icon-bg {
+  max-height: 5.5rem;
+  margin-bottom: -10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon-bg-work {
+  background-color: var(--color-orange);
+}
+
+.icon-bg-play {
+  background-color: var(--color-blue);
+}
+
+.icon-bg-study {
+  background-color: var(--color-pink);
+}
+
+.icon-bg-exercise {
+  background-color: var(--color-green);
+}
+
+.icon-bg-social {
+  background-color: var(--color-purple-dark);
+}
+
+.icon-bg-care {
+  background-color: var(--color-yellow);
+}
+
+.icon {
+  width: 7.8rem;
+  height: auto;
+  margin-right: 1.5rem;
+}
+
+.board-info {
+  background-color: var(--color-navy-medium);
+  border-radius: 15px;
+  padding: 3.2rem;
+
+  position: relative;
+  z-index: 10;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.4rem;
+}
+
+.activity {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.btn-select {
+  background: none;
+  border: none;
+}
+
+.current-hours {
+  font-size: 5.6rem;
+  font-weight: 300;
+  margin-bottom: 0.8rem;
+}
+
+.prev-info {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-navy-light);
+}
+
+/* FOOTER */
+.footer {
+  padding: 2rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.attribution a:hover {
+  text-decoration: none;
+}

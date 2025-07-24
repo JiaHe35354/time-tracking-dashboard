@@ -216,3 +216,11 @@ body {
 .attribution a:hover {
   text-decoration: none;
 }
+
+/* ERROR */
+.error {
+  background-color: rgb(245, 46, 46);
+  padding: 4rem;
+  border-radius: 15px;
+  font-size: 2rem;
+}

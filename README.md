@@ -86,18 +86,33 @@ Here's the code I'm proud of:
 ```
 
 ```js
-btnGroup.addEventListener("click", async function (e) {
-  if (!e.target.classList.contains("btn")) return;
+function updateUI(timeframe, label) {
+  const boards = document.querySelectorAll(".board");
+
+  currentData.forEach((item, index) => {
+    const current = item.timeframes[timeframe].current;
+    const previous = item.timeframes[timeframe].previous;
+
+    const currentEl = boards[index].querySelector(".current-hours");
+    const prevTimeframeEl = boards[index].querySelector(".prev-timeframe");
+    const prevHoursEl = boards[index].querySelector(".prev-hours");
+
+    const currentSuffix = current <= 1 ? "hr" : "hrs";
+    const prevSuffix = previous <= 1 ? "hr" : "hrs";
+
+    currentEl.textContent = `${current}${currentSuffix}`;
+    prevTimeframeEl.textContent = label;
+    prevHoursEl.textContent = `${previous}${prevSuffix}`;
+  });
+}
+
+btnGroup.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("btn") || !currentData) return;
 
   btns.forEach((btn) => btn.classList.remove("btn-active"));
-
   e.target.classList.add("btn-active");
 
-  const data = await fetchData();
-
-  let timeframe;
-  let label;
-
+  let timeframe, label;
   if (e.target.classList.contains("daily")) {
     timeframe = "daily";
     label = "Yesterday";
@@ -109,23 +124,7 @@ btnGroup.addEventListener("click", async function (e) {
     label = "Last Month";
   }
 
-  const boards = document.querySelectorAll(".board");
-
-  data.forEach((item, index) => {
-    const current = item.timeframes[timeframe].current;
-    const previous = item.timeframes[timeframe].previous;
-
-    const currentEl = boards[index].querySelector(".current-hours");
-    const prevTimeframeEl = boards[index].querySelector(".prev-timeframe");
-    const prevHoursEl = boards[index].querySelector(".prev-hours");
-
-    let currentSuffix = current <= 1 ? "hr" : "hrs";
-    let prevSuffix = previous <= 1 ? "hr" : "hrs";
-
-    currentEl.textContent = `${current}${currentSuffix}`;
-    prevTimeframeEl.textContent = `${label}`;
-    prevHoursEl.textContent = `${previous}${prevSuffix}`;
-  });
+  updateUI(timeframe, label);
 });
 ```
 
